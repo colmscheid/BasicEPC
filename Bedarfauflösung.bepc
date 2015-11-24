@@ -1,0 +1,45 @@
+STARTPROZESSE
+	ALTERNATIVEN
+		F Verbrauchsgesteuerte Bedarfsprognose
+		ODER
+		F Primärbedarfsplanung
+	ALTERNATIVEN ENDE
+	E originärer Bedarf aufgetreten
+	ODER
+	E Planungszeitpunkt erreicht
+	ODER
+	F Stücklistenverwaltung
+	E Stückliste geändert
+	ODER
+	F Beschaffung
+	E Lieferung geändert
+	ODER
+	F Produktion
+	E Betriebsstörung aufgetreten
+STARTPROZESSE ENDE
+
+F Analyse, ob Net-Change oder Neuentwurf
+
+ALTERNATIVEN
+	E Net-Change ausgewählt
+	F Aufteilung auf Sacharbeiter
+	ODER
+	E Neuentwurf ausgewählt
+ALTERNATIVEN ENDE
+
+F Berechne Bruttobedarf
+F Lagerbestand ermitteln / Reservierung
+F Berechne Nettobedarf
+F Losbildung
+E Auftrag erstellt
+F Prüfen, ob Termin in der Vergangenheit
+
+ALTERNATIVEN
+	E Termine liegt in der Vergangenheit
+	F Vorwärtsterminierung	
+	ODER
+	F Freigabe für Sekundärbedarfrechnung
+ALTERNATIVEN ENDE
+
+F Berechne Sekundärbedarf
+SPRINGE ZU F Berechne Bruttobedarf
